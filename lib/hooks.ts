@@ -3,6 +3,7 @@ import fetcher from "./fetcher";
 
 export const useMe = () => {
   const { data, error } = useSWR("/me", fetcher);
+  console.log(data);
   return {
     user: data,
     isLoading: !error && !data,
@@ -11,10 +12,10 @@ export const useMe = () => {
 };
 
 export const usePlaylist = () => {
-  const { data, error } = useSWR("/playlists", fetcher);
+  const { data, error } = useSWR("/playlist", fetcher);
   return {
-    playlists: data || [],
-    isLoading: !error && !data,
+    playlists: (data as any) || [],
+    isLoading: !data && !error,
     isError: error,
   };
 };

@@ -23,6 +23,7 @@ const run = async () => {
       });
     })
   );
+
   const salt = bcrypt.genSaltSync();
   const user = await prisma.user.upsert({
     where: { email: "user@test.com" },
@@ -32,6 +33,7 @@ const run = async () => {
       password: bcrypt.hashSync("password", salt),
     },
   });
+
   const songs = await prisma.song.findMany({});
   await Promise.all(
     new Array(10).fill(1).map(async (_, i) => {
@@ -42,7 +44,9 @@ const run = async () => {
             connect: { id: user.id },
           },
           songs: {
-            connect: songs.map((song) => ({ id: song.id })),
+            connect: songs.map((song) => ({
+              id: song.id,
+            })),
           },
         },
       });
@@ -52,7 +56,7 @@ const run = async () => {
 
 run()
   .catch((e) => {
-    console.log(e);
+    console.error(e);
     process.exit(1);
   })
   .finally(async () => {

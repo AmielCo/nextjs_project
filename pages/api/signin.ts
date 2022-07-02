@@ -30,6 +30,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       })
     );
     res.json({ user, message: "success" });
+    console.log(user);
+    console.log(token);
   } else {
     res.status(401);
     res.json({ error: "Invalid credentials" });
