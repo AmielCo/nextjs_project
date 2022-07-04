@@ -33,7 +33,7 @@ const GradientLayout = ({
             <Text fontSize="sm" fontWeight="bold" casing="uppercase">
               {subtitle}
             </Text>
-            <Text fontSize="6xl">{title}</Text>
+            <Text fontSize="5xl">{title}</Text>
             <Text fontSize="sm" fontWeight="100">
               {description}
             </Text>
