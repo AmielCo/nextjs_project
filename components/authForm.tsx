@@ -23,7 +23,7 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
   };
 
   return (
-    <Box height="100vh" width="100vw" bg="black" color="white">
+    <Box height="100vh" width="100%" bg="black" color="white">
       <Flex
         justify="center"
         align="center"
