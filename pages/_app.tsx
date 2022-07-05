@@ -1,14 +1,13 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import "reset-css";
+import { StoreProvider } from "easy-peasy";
 import PlayerLayout from "../components/playerLayout";
-
-import "../styles/globals.css";
+import "reset-css";
 
 const theme = extendTheme({
   colors: {
     gray: {
       100: "#F5f5f5",
-      200: "EEEEEE",
+      200: "#EEEEEE",
       300: "#E0E0E0",
       400: "#BDBDBD",
       500: "#9E9E9E",
