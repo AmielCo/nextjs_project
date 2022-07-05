@@ -29,7 +29,7 @@ const Playlist = ({ playlist }) => {
       description={`You have ${playlist.songs.length} songs in this playlist`}
       image={`https://picsum.photos/400?random=${playlist.id}`}
     >
-      <SongTable />
+      <SongTable songs={playlist.songs} />
     </GradientLayout>
   );
 };
