@@ -13,7 +13,7 @@ const Home = ({ artists }) => {
       color="gray"
       subtitle="profile"
       title={`${user?.firstName} ${user?.lastName}`}
-      description={`${user?.playlistsCount} public playlists`}
+      description={`${user?.playlistCount} public playlists`}
       image="https://dl.dropboxusercontent.com/s/bgiv0ssz3xpotz9/peep.png?dl=0"
     >
       <Box color="white" paddingX="40px">
@@ -25,8 +25,14 @@ const Home = ({ artists }) => {
         </Box>
         <Flex>
           {artists.map((artist) => (
-            <Box paddingX="10px" width="20%">
-              <Box bg="gray.900" borderRadius="4px" padding="15px" width="100%">
+            <Box paddingX="10px" max-width="20%" min-height="40em">
+              <Box
+                bg="gray.900"
+                borderRadius="4px"
+                padding="15px"
+                max-width="100%"
+                min-height="40em%"
+              >
                 <Image
                   src="https://placekitten.com/300/300"
                   borderRadius="100%"
